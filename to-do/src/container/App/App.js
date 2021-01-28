@@ -1,12 +1,16 @@
+import React from 'react';
 
 
-
-function App() {
-  return (
-    <div className="App">
-      Hello
-    </div>
-  );
+const App = () => {
+    return (
+      <div className="App">
+        {/*
+        <CurrentDate />
+        <OpenTasks />
+        <TaskList />
+        <Modal> */}
+      </div>
+    );
 }
 
 export default App;
