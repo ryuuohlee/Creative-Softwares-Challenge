@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CurrentDate from '../../components/CurrentDate/CurrentDate.js';
 import OpenTasks from '../../components/OpenTasks/OpenTasks.js';
 import TaskList from '../../components/TaskList/TaskList.js'
+import { AppStyle } from './AppStyles.js'
 
 
 const App = () => {
@@ -14,11 +15,11 @@ const App = () => {
   console.log(dateParse)
 
     return (
-      <div className="App">
+      <AppStyle className="App">
+        <TaskList tasks={taskList} />
         <CurrentDate date={dateParse} />
         <OpenTasks open={openTasks} />
-        <TaskList tasks={taskList} />
-      </div>
+      </AppStyle>
     );
 }
 

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const TaskModal = (props) => {
-  console.log(props)
-  const { date, priority, status, task } = props;
+  const [task, setTask] = useState('');
+  const [date, setDate] = useState('');
+  const [priority, setPriority] = useState('');
+
     return (
       <div className="Tasks">
         <form>
