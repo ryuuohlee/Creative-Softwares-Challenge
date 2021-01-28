@@ -11,6 +11,9 @@ const Task = (props) => {
         <div className="classLabel">
           {task}
         </div>
+        <div className="classLabel">
+          {date}
+        </div>
       </div>
     );
 }
