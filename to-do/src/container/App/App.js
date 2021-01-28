@@ -9,6 +9,7 @@ const App = () => {
   const dateParse = date.toString().split(' ');
   const [openTasks, setOpenTasks] = useState(0)
   const [taskList, setTasks] = useState([{task:'task 1', priority:'Low', date:'Nov 7th, 2020', status: false}, {task:'task 2', priority:'Medium', date:'Nov 8th, 2020', status: false}, {task:'task 3', priority:'high', date:'Nov 9th, 2020', status: true}])
+  const [view, setView] = useState('Pending');
 
   console.log(dateParse)
 
