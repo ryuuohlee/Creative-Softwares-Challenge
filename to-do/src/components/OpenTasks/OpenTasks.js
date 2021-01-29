@@ -10,7 +10,7 @@ const OpenTasks = (props) => {
           <span>{open}</span>
         </Tasks>
         <Label className='label'>
-          <span>Tasks</span>
+          Open Tasks
         </Label>
       </CountContainer>
     );

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const DateContainer = styled.div`
   margin: 18px;
+  margin-top: 35px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5%;
@@ -15,6 +16,8 @@ export const DateContainer = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 411px) {
+    margin-top: 10px;
+    margin: 10px;
     flex-direction: row;
     padding: 10px;
     justify-content: center;

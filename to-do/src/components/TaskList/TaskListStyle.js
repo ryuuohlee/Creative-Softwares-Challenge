@@ -11,6 +11,10 @@ export const ListContainer = styled.div`
   min-width: 275px;
   padding: 1.25rem;
   position: relative;
+  @media (max-width: 411px) {
+    height: 150px;
+    min-height: 550px;
+  }
 `;
 
 export const AddTask = styled.div`

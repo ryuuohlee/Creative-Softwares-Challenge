@@ -33,8 +33,11 @@ export const Tasks = styled.h1`
   font-size: 400%;
   color: red;
   @media (max-width: 411px) {
-    font-size: 180%;
-    padding-right: 5px;
+    font-size: 190%;
+    padding-right: 4px;
+    padding-bottom: -5px;
+    margin-bottom: -5px;
+    padding-top: 5px;
   }
 `;
 
@@ -46,5 +49,7 @@ export const Label = styled.h3`
   vertical-align: baseline;
   @media (max-width: 411px) {
     font-size: 170%;
+    padding-bottom: -5px;
+    padding-top: 5px;
   }
 `;

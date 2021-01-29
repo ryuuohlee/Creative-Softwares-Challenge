@@ -8,6 +8,20 @@ export const AppStyle = styled.div`
   }
 `;
 
+export const FilterContainer = styled.div`
+  margin-left: 100px;
+  width: 600px;
+  @media (max-width: 411px) {
+    width: auto;
+    margin-left: 0;
+  }
+`;
+
+export const ControlContainer = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
 export const Filter = styled.span`
-  margin: 5px;
+  margin: 10px;
 `
