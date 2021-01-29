@@ -10,18 +10,18 @@ const App = () => {
   const dateParse = date.toString().split(' ');
   const [taskList, setTasks] = useState([{task:'task 1', priority:'Low', date:'Nov 7th, 2020', status: false}, {task:'task 2', priority:'Medium', date:'Nov 8th, 2020', status: false}, {task:'task 3', priority:'high', date:'Nov 9th, 2020', status: true}])
   const openTasks = taskList.filter(task => !task.status).length;
-  const [listView, setListView] = useState(taskList.filter(task => task.status===false));
+  const [listView, setListView] = useState(false);
 
   useEffect(() => {
-    setTasks(taskList);
+    setListView(listView);
   })
 
   const handleListView = (event) => {
     if(event.target.outerText==="Pending") {
-      setListView(taskList.filter(task => task.status===false))
+      setListView(false)
     }
     else {
-      setListView(taskList.filter(task => task.status===true))
+      setListView(true)
     }
   }
 

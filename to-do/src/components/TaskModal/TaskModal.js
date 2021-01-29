@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const TaskModal = (props) => {
@@ -31,8 +31,6 @@ const TaskModal = (props) => {
     }])
     closeModal();
   }
-
-  console.log(taskTitle, date, priority)
 
     return (
       <div className="Tasks">

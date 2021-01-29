@@ -18,12 +18,13 @@ const TaskList = (props) => {
     setIsOpen(false);
   }
 
-  console.log(tasks)
+  console.log(view)
 
     return (
       <ListContainer className="listContainer">
         <div className="list">
-          {view.map(task => {
+          {tasks.map(task => {
+            if(task.status !== view) return null;
             return <Task
                       date={task.date}
                       priority={task.priority}
