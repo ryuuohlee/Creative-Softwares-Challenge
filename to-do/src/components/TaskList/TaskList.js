@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Task from '../Task/Task.js';
 import TaskModal from '../TaskModal/TaskModal.js';
 import Modal from 'react-modal';
-import { ListContainer, AddTask } from './TaskListStyle.js';
+import { ListContainer, AddTask, Add } from './TaskListStyle.js';
 
 
 const TaskList = (props) => {
@@ -34,7 +34,7 @@ const TaskList = (props) => {
           }
         </div>
         <AddTask className="addTask">
-          <button onClick={openModal}>+</button>
+          <Add onClick={openModal}>+</Add>
         </AddTask>
         <Modal
                 appElement={document.getElementById('app')}

@@ -18,4 +18,16 @@ export const AddTask = styled.div`
   position: absolute;
   right: 30px;
   bottom: 30px;
-`
+`;
+
+export const Add = styled.button`
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  border: 0px;
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  font-size: 150%;
+  font: strong
+`;
