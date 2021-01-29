@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useRef } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { ModalContainer, Form, TaskData } from './TaskModalStyle.js';
 
 const TaskModal = (props) => {
   console.log(props)
@@ -7,13 +9,19 @@ const TaskModal = (props) => {
   const [taskTitle, setTaskTitle] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
+  const [calIsOpen, setCalOpen] = useState(false);
+  const calButtonRef = useRef();
+  const calRef = useRef()
+  const [startDate, setStartDate] = useState(new Date())
+
 
   const handleTaskTitle = (event) => {
     setTaskTitle(event.target.value)
   }
 
-  const handleDueDate = (event) => {
-    setDate(event.target.value)
+  const handleDueDate = (select) => {
+    const dateData = select.toString().split(' ');
+    setDate(`${dateData[1]} ${dateData[2]}, ${dateData[3]}`)
   }
 
   const handlePriority = (event) => {
@@ -32,48 +40,56 @@ const TaskModal = (props) => {
     closeModal();
   }
 
+  console.log(date)
+
     return (
       <div className="Tasks">
-        <form onSubmit={handleSubmit} >
-          <div className='taskName'>
+        <Form onSubmit={handleSubmit} >
+          <TaskData className='taskDate'>
+            <label htmlFor='taskDate'>Due Date: </label>
+
+            <DatePicker
+              selected={startDate}
+              onSelect={handleDueDate}
+              onChange={date => setStartDate(date)}
+              isClearable
+            />
+
+          </TaskData>
+          <TaskData className='taskName'>
             <label htmlFor='task'>Task: </label>
             <input
               type='text'
               id='taskName'
               onChange={handleTaskTitle}
             />
-          </div>
-          <div className='taskDate'>
-            <label htmlFor='taskDate'>Due Date: </label>
-            <input
-              type='date'
-              id='taskDate'
-              onChange={handleDueDate}
-            />
-          </div>
-          <div className='taskPriority'>
+          </TaskData>
+          <TaskData className='taskPriority'>
             <label htmlFor='taskPriority'>Priority: </label>
             <input
               type='radio'
               id='taskPriority'
+              name='priority'
               onChange={handlePriority}
               value="Low"
             /> Low
             <input
               type='radio'
               id='taskPriority'
+              name='priority'
               onChange={handlePriority}
               value="Medium"
             /> Medium
             <input
               type='radio'
               id='taskPriority'
+              name='priority'
               onChange={handlePriority}
               value="High"
             /> High
-          </div>
+          </TaskData>
           <input type="submit" value='Save' />
-        </form>
+        </Form>
       </div>
     );
 }

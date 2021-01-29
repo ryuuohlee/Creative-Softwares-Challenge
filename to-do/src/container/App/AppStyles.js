@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const AppStyle = styled.div`
   display: flex;
-  grid-template-columns: 33% | 33% | 33%
+  flex-direction: row;
+  @media (max-width: 411px) {
+    flex-direction: column;
+  }
 `;
 
 export const Filter = styled.span`
