@@ -5,16 +5,18 @@ const Task = (props) => {
   const { date, priority, status, task } = props;
     return (
       <TaskContainer className="Tasks">
-        <input
-          type="checkbox"
-        />
-        <div className="classState">
-        </div>
-        <div className="classLabel">
-          {task}
-        </div>
-        <div className="classLabel">
-          {date}
+        <div className="stats">
+          <div className="classState">
+            <input
+              type="checkbox"
+            />
+          </div>
+          <div className="classLabel">
+            {task}
+          </div>
+          <div className="classLabel">
+            {date}
+          </div>
         </div>
         <div>
           {priority==='Low' ?

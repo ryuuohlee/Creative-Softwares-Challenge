@@ -13,9 +13,8 @@ const App = () => {
   const [listView, setListView] = useState(taskList.filter(task => task.status===false));
 
   useEffect(() => {
-
+    setTasks(taskList);
   })
-
 
   const handleListView = (event) => {
     if(event.target.outerText==="Pending") {
