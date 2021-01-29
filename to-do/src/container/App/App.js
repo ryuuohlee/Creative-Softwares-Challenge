@@ -33,8 +33,6 @@ const App = () => {
         </div>
         <div>
           <CurrentDate date={dateParse} />
-        </div>
-        <div>
           <OpenTasks open={openTasks} />
         </div>
       </AppStyle>
