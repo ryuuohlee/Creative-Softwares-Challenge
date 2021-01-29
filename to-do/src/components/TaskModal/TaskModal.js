@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 
 
 const TaskModal = (props) => {
-  const [task, setTask] = useState('');
+  console.log(props)
+  const { tasks, setTasks, closeModal } = props;
+  const [taskTitle, setTaskTitle] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
 
   const handleTaskTitle = (event) => {
-    setTask(event.target.value)
+    setTaskTitle(event.target.value)
   }
 
   const handleDueDate = (event) => {
@@ -20,14 +22,21 @@ const TaskModal = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    event.stopPropagation();
+    setTasks([...tasks, {
+      task: taskTitle,
+      date: date,
+      priority: priority,
+      status: false
+    }])
+    closeModal();
   }
 
-  console.log(task, date, priority)
+  console.log(taskTitle, date, priority)
 
     return (
       <div className="Tasks">
-        <form>
+        <form onSubmit={handleSubmit} >
           <div className='taskName'>
             <label htmlFor='task'>Task: </label>
             <input
@@ -65,7 +74,7 @@ const TaskModal = (props) => {
               value="High"
             /> High
           </div>
-          <input type="submit" value='Save'/>
+          <input type="submit" value='Save' />
         </form>
       </div>
     );

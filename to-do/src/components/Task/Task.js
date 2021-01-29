@@ -1,5 +1,5 @@
 import React from 'react';
-import { TaskContainer } from './TaskStyle.js';
+import { TaskContainer, Low, Medium, High } from './TaskStyle.js';
 
 const Task = (props) => {
   const { date, priority, status, task } = props;
@@ -19,21 +19,21 @@ const Task = (props) => {
         <div>
           {priority==='Low' ?
             <div>
-              <p>Low</p>
+              <Low>Low</Low>
               <p>Medium</p>
               <p>High</p>
             </div>
             : (priority==='Medium' ?
             <div>
               <p>Low</p>
-              <p>Medium</p>
+              <Medium>Medium</Medium>
               <p>High</p>
             </div>
             : (priority==='High'?
             <div>
               <p>Low</p>
               <p>Medium</p>
-              <p>High</p>
+              <High>High</High>
             </div>
             :
             <div>
@@ -41,7 +41,7 @@ const Task = (props) => {
               <p>Medium</p>
               <p>High</p>
             </div>
-            ))}
+             ))}
         </div>
       </TaskContainer>
     );

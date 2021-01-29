@@ -9,23 +9,29 @@ const App = () => {
   const date = new Date();
   const dateParse = date.toString().split(' ');
   const [taskList, setTasks] = useState([{task:'task 1', priority:'Low', date:'Nov 7th, 2020', status: false}, {task:'task 2', priority:'Medium', date:'Nov 8th, 2020', status: false}, {task:'task 3', priority:'high', date:'Nov 9th, 2020', status: true}])
-  const [view, setView] = useState('Pending');
   const openTasks = taskList.filter(task => !task.status).length;
+  const [listView, setListView] = useState(taskList.filter(task => task.status===false));
 
   useEffect(() => {
-    setView(view);
+
   })
 
-  const handleView = (event) => {
-    setView(event.target.outerText);
+
+  const handleListView = (event) => {
+    if(event.target.outerText==="Pending") {
+      setListView(taskList.filter(task => task.status===false))
+    }
+    else {
+      setListView(taskList.filter(task => task.status===true))
+    }
   }
 
     return (
       <AppStyle className="App">
         <div className="filterControl">
-          <Filter onClick={handleView} value="Pending">Pending</Filter><Filter onClick={handleView} value="Pending">Completed</Filter>
+          <Filter onClick={handleListView} value="Pending">Pending</Filter><Filter onClick={handleListView} value="Pending">Completed</Filter>
           <div>
-            <TaskList tasks={taskList} view={view}/>
+            <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
           </div>
         </div>
         <div>

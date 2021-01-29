@@ -12,3 +12,14 @@ export const TaskContainer = styled.div`
   padding: 5px;
 `;
 
+export const Low = styled.p`
+  color: red;
+`;
+
+export const Medium = styled.p`
+  color: red;
+`;
+
+export const High = styled.p`
+  color: red;
+`;
