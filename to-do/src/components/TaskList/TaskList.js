@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Task from '../Task/Task.js';
 import TaskModal from '../TaskModal/TaskModal.js';
 import Modal from 'react-modal';
@@ -6,8 +6,23 @@ import { ListContainer, AddTask } from './TaskListStyle.js';
 
 
 const TaskList = (props) => {
-  const { tasks } = props;
+  const { tasks, view } = props;
   const [modalIsOpen,setIsOpen] = useState(false);
+  const [listView, setListView] = useState(tasks.filter(task => task.status===false));
+
+  useEffect(()=> {
+    setListView(listView);
+  })
+
+  const handleListView = (view) => {
+    if(view==="Pending") {
+      setListView(tasks.filter(task => task.status===false))
+    }
+    else {
+      setListView(tasks.filter(task => task.status===true))
+    }
+  }
+
 
   //Modal functions
   function openModal() {
@@ -18,10 +33,13 @@ const TaskList = (props) => {
     setIsOpen(false);
   }
 
+  console.log(view)
+  console.log(listView)
+
     return (
       <ListContainer className="listContainer">
-        <div className="list">
-          {tasks.map(task => {
+        <div className="list" onChange={handleListView}>
+          {listView.map(task => {
             return <Task
                       date={task.date}
                       priority={task.priority}
@@ -48,7 +66,7 @@ const TaskList = (props) => {
                     bottom: '0px',
                     backgroundColor: 'rgba(0,0,0,0.5)',
                   },
-                  content : {
+                  content: {
                     top: '50%',
                     left: '50%',
                     right: 'auto',

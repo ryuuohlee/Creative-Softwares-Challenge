@@ -10,7 +10,7 @@ export const ListContainer = styled.div`
   min-height: 600px;
   width: auto;
   min-width: 275px;
-  padding: 2rem;
+  padding: 1.25rem;
   position: relative;
 `;
 
