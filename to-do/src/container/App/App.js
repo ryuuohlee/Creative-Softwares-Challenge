@@ -27,15 +27,13 @@ const App = () => {
 
     return (
       <AppStyle className="App">
-        <div className="filterControl">
-          <Filter onClick={handleListView} value="Pending">Pending</Filter><Filter onClick={handleListView} value="Pending">Completed</Filter>
-          <div>
-            <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
-          </div>
-        </div>
         <div>
           <CurrentDate date={dateParse} />
           <OpenTasks open={openTasks} />
+        </div>
+        <div className="filterControl">
+          <Filter onClick={handleListView} value="Pending">Pending</Filter><Filter onClick={handleListView} value="Pending">Completed</Filter>
+            <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
         </div>
       </AppStyle>
     );

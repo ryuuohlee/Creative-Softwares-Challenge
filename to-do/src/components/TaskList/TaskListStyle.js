@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ListContainer = styled.div`
-  display: table;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5%;

@@ -13,7 +13,7 @@ export const TaskContainer = styled.div`
 `;
 
 export const Stats = styled.div`
-  display: inline-block;
+  display: ;
 `;
 
 export const Low = styled.button`
