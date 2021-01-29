@@ -1,17 +1,18 @@
 import React from 'react';
+import { CountContainer, Tasks, Label } from './OpenTaskStyle.js';
 
 
 const OpenTasks = (props) => {
   const { open } = props;
     return (
-      <div className="openTasks">
-        <div className="count">
-          {open}
-        </div>
-        <div className='label'>
-          Tasks
-        </div>
-      </div>
+      <CountContainer className="openTasks">
+        <Tasks className="count">
+          <span>{open}</span>
+        </Tasks>
+        <Label className='label'>
+          <span>Tasks</span>
+        </Label>
+      </CountContainer>
     );
 }
 

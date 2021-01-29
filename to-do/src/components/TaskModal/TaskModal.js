@@ -17,7 +17,7 @@ const TaskModal = (props) => {
             />
           </div>
           <div className='taskDate'>
-            <label htmlFor='taskDate'>Date: </label>
+            <label htmlFor='taskDate'>Due Date: </label>
             <input
               type='date'
               id='taskDate'
