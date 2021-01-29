@@ -13,8 +13,11 @@ export const DateContainer = styled.div`
   padding: 2rem;
   position: relative;
   display: flex;
+  flex-direction: column;
   @media (max-width: 411px) {
     flex-direction: row;
+    padding: 10px;
+    justify-content: center;
   }
 
 `;
@@ -24,6 +27,7 @@ export const Day = styled.h3`
   color: rgb(100,100,100);
   @media (max-width: 411px) {
     font-size: large;
+    padding-right: 5px;
   }
 `;
 
@@ -31,6 +35,7 @@ export const Date = styled.h1`
   margin: 2px;
   @media (max-width: 411px) {
     font-size: large;
+    padding-right: 5px;
   }
 `;
 

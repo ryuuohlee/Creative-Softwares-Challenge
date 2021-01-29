@@ -12,19 +12,39 @@ export const CountContainer = styled.div`
   width: auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 411px) {
+    flex-direction: row;
+    font-size: small;
+    height: 40px;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+  }
 `;
 
 export const Tasks = styled.h1`
   margin: 2px;
-  align-text: center;
+  text-align: center;
+  vertical-align: baseline;
   justify-content: center;
   font-size: 400%;
   color: red;
+  @media (max-width: 411px) {
+    font-size: 180%;
+    padding-right: 5px;
+  }
 `;
 
 export const Label = styled.h3`
   margin: 2px;
   color: rgb(100,100,100);
-  align-text: center;
+  text-align: center;
   justify-content: center;
+  vertical-align: baseline;
+  @media (max-width: 411px) {
+    font-size: 170%;
+  }
 `;
