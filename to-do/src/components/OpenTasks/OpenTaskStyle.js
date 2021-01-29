@@ -19,6 +19,7 @@ export const Tasks = styled.h1`
   align-text: center;
   justify-content: center;
   font-size: 400%;
+  color: red;
 `;
 
 export const Label = styled.h3`
