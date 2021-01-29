@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { TaskContainer } from './TaskStyle.js';
 
 const Task = (props) => {
   const { date, priority, status, task } = props;
     return (
-      <div className="Tasks">
+      <TaskContainer className="Tasks">
         <input
           type="checkbox"
         />
@@ -16,7 +16,7 @@ const Task = (props) => {
         <div className="classLabel">
           {date}
         </div>
-      </div>
+      </TaskContainer>
     );
 }
 
