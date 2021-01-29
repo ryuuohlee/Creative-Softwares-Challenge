@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Task from '../Task/Task.js';
 import TaskModal from '../TaskModal/TaskModal.js';
 import Modal from 'react-modal';
+import { ListContainer, AddTask } from './TaskListStyle.js';
 
 
 const TaskList = (props) => {
@@ -18,7 +19,7 @@ const TaskList = (props) => {
   }
 
     return (
-      <div>
+      <ListContainer className="listContainer">
         <div className="list">
           {tasks.map(task => {
             return <Task
@@ -30,9 +31,9 @@ const TaskList = (props) => {
                     })
           }
         </div>
-        <div className="addTask">
+        <AddTask className="addTask">
           <button onClick={openModal}>+</button>
-        </div>
+        </AddTask>
         <Modal
                 appElement={document.getElementById('app')}
                 ariaHideApp={false}
@@ -61,7 +62,7 @@ const TaskList = (props) => {
                 <button onClick={closeModal}>X</button>
                 <TaskModal />
         </Modal>
-      </div>
+      </ListContainer>
     );
 }
 

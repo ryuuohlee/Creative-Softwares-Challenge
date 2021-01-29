@@ -3,7 +3,6 @@ import React from 'react';
 
 const CurrentDate = (props) => {
   const { date } = props;
-  console.log(props)
     return (
       <div className="currentDate">
         <div className="dayOfWeek">
