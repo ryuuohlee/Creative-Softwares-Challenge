@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { ModalContainer, Form, TaskData } from './TaskModalStyle.js';
+import { Form, TaskData } from './TaskModalStyle.js';
 
 const TaskModal = (props) => {
   console.log(props)
@@ -9,11 +9,7 @@ const TaskModal = (props) => {
   const [taskTitle, setTaskTitle] = useState('');
   const [date, setDate] = useState('');
   const [priority, setPriority] = useState('');
-  const [calIsOpen, setCalOpen] = useState(false);
-  const calButtonRef = useRef();
-  const calRef = useRef()
-  const [startDate, setStartDate] = useState(new Date())
-
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleTaskTitle = (event) => {
     setTaskTitle(event.target.value)
@@ -45,9 +41,11 @@ const TaskModal = (props) => {
     return (
       <div className="Tasks">
         <Form onSubmit={handleSubmit} >
+          <h1>
+            Enter your Task
+          </h1>
           <TaskData className='taskDate'>
             <label htmlFor='taskDate'>Due Date: </label>
-
             <DatePicker
               selected={startDate}
               onSelect={handleDueDate}

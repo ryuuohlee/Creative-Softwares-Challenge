@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const ModalContainer = styled.div`
-  display: flex;
-`;
-
 export const Form = styled.form`
   margin: 10px;
 `;

@@ -17,9 +17,6 @@ export const ListContainer = styled.div`
   }
 `;
 
-export const List = styled.div`;
-`;
-
 export const AddTask = styled.div`
   position: absolute;
   right: 30px;
@@ -36,4 +33,9 @@ export const Add = styled.button`
   width: 50px;
   font-size: 150%;
   font: strong
+`;
+
+export const CloseModal = styled.button`
+  position: absolute;
+  right: 1rem;
 `;

@@ -20,10 +20,6 @@ export const Stats = styled.div`
   margin-left: 5px;
 `;
 
-export const PriorityStates = styled.div`
-  right: 0px;
-`;
-
 export const Priority = styled.div`
   display: flex;
   justify-content: center;

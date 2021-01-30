@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     setListView(listView);
-  })
+  },[listView])
 
   const handleListView = (event) => {
     if(event.target.outerText==="Pending") {

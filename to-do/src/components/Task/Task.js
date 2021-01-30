@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, PriorityStates, NotSelected } from './TaskStyle.js';
+import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, NotSelected } from './TaskStyle.js';
 
 const Task = (props) => {
   const { date, priority, status, task, tasks, setTasks } = props;
-  //const [progress, setProgress] = useState(status)
-  const [job, setJob] = useState({
-    date: date,
-    priority: priority,
-    status: status,
-    task: task
-  })
 
     return (
       <TaskContainer className="Tasks">
@@ -38,7 +31,7 @@ const Task = (props) => {
             {date}
           </div>
         </Stats>
-        <PriorityStates>
+        <div>
           {priority==='Low' ?
             <Priority className="priority">
               <Low>Low</Low>
@@ -64,7 +57,7 @@ const Task = (props) => {
               <NotSelected>High</NotSelected>
             </Priority>
              ))}
-        </PriorityStates>
+        </div>
       </TaskContainer>
     );
 }

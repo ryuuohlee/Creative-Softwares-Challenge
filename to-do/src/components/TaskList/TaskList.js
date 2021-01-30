@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import Task from '../Task/Task.js';
 import TaskModal from '../TaskModal/TaskModal.js';
 import Modal from 'react-modal';
-import { ListContainer, AddTask, Add, List } from './TaskListStyle.js';
+import { ListContainer, AddTask, Add, CloseModal } from './TaskListStyle.js';
 
 
 const TaskList = (props) => {
   const { tasks, view, setTasks } = props;
   const [modalIsOpen,setIsOpen] = useState(false);
-
-  //handle updating if completed or not
-  const handleUpdate = (status) => {
-
-  }
 
   //Modal functions
   function openModal() {
@@ -27,7 +22,7 @@ const TaskList = (props) => {
 
     return (
       <ListContainer className="listContainer">
-        <List className="list">
+        <div className="list">
           {tasks.map(task => {
             if(task.status !== view) return null;
             return <Task
@@ -41,7 +36,7 @@ const TaskList = (props) => {
                        />
                     })
           }
-        </List>
+        </div>
         <AddTask className="addTask">
           <Add onClick={openModal}>+</Add>
         </AddTask>
@@ -71,7 +66,7 @@ const TaskList = (props) => {
                 }}
                 contentLabel="Task Entry"
               >
-                <button onClick={closeModal}>X</button>
+                <CloseModal onClick={closeModal}>X</CloseModal>
                 <TaskModal tasks={tasks} setTasks={setTasks} closeModal={closeModal}/>
         </Modal>
       </ListContainer>
