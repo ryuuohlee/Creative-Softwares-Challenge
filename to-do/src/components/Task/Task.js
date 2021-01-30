@@ -6,7 +6,6 @@ const Task = (props) => {
   const { date, priority, status, task, tasks, setTasks, id } = props;
 
   const handleStatus = (event) => {
-    // event.stopPropagation();
     const job = {
       id: id,
       date: date,
@@ -14,8 +13,9 @@ const Task = (props) => {
       priority: priority,
       status: !status,
     }
-    tasks.splice((id-1), 1, job);
-    setTasks(tasks);
+    const newTasks = [...tasks]
+    newTasks[id-1] = job;
+    setTasks(newTasks);
   }
 
   const handlePriority = (event) => {
@@ -26,13 +26,10 @@ const Task = (props) => {
       priority: event.target.outerText,
       status: status,
     }
-    tasks.splice((id-1), 1, job);
-    setTasks(tasks);
+    const newTasks = [...tasks]
+    newTasks[id-1] = job;
+    setTasks(newTasks);
   }
-
-  console.log()
-  console.log("task id", id)
-  console.log(tasks)
 
     return (
       <TaskContainer className="Tasks">

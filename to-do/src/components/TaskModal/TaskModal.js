@@ -4,7 +4,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Form, TaskData } from './TaskModalStyle.js';
 
 const TaskModal = (props) => {
-  console.log(props)
   const { tasks, setTasks, closeModal } = props;
   const [taskTitle, setTaskTitle] = useState('');
   const [date, setDate] = useState('');
@@ -25,8 +24,6 @@ const TaskModal = (props) => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
     setTasks([...tasks, {
       id: tasks.length+1,
       task: taskTitle,
