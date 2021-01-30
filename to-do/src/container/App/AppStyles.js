@@ -24,4 +24,9 @@ export const ControlContainer = styled.div`
 
 export const Filter = styled.span`
   margin: 10px;
+  font-size: large;
+  font-weight: bold;
+`
+export const Unfilter = styled.span`
+  margin: 10px;
 `

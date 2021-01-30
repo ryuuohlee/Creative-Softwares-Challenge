@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CurrentDate from '../../components/CurrentDate/CurrentDate.js';
 import OpenTasks from '../../components/OpenTasks/OpenTasks.js';
 import TaskList from '../../components/TaskList/TaskList.js'
-import { AppStyle, ControlContainer, FilterContainer, Filter } from './AppStyles.js'
+import { AppStyle, ControlContainer, FilterContainer, Filter, Unfilter } from './AppStyles.js'
 
 
 const App = () => {
@@ -32,9 +32,15 @@ const App = () => {
           <OpenTasks open={openTasks} />
         </div>
         <FilterContainer className="filterControl">
-          <ControlContainer>
-            <Filter onClick={handleListView} value="Pending">Pending</Filter><Filter onClick={handleListView} value="Pending">Completed</Filter>
-          </ControlContainer>
+          {listView === false ?<ControlContainer>
+              <Filter onClick={handleListView} value="Pending">Pending</Filter><Unfilter onClick={handleListView} value="Pending">Completed</Unfilter>
+            </ControlContainer>
+            :
+            <ControlContainer>
+              <Unfilter onClick={handleListView} value="Pending">Pending</Unfilter><Filter onClick={handleListView} value="Pending">Completed</Filter>
+            </ControlContainer>
+            }
+
           <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
         </FilterContainer>
       </AppStyle>
