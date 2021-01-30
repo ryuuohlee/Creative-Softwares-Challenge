@@ -1,9 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, NotSelected, Calendar, DueDate } from './TaskStyle.js';
 import calendar from '../../calendar-with-spring-binder-and-date-blocks.png';
 
 const Task = (props) => {
-  const { date, priority, status, task, tasks, setTasks } = props;
+  const { date, priority, status, task, tasks, setTasks, id } = props;
+
+  const handleStatus = (event) => {
+    // event.stopPropagation();
+    const job = {
+      id: id,
+      date: date,
+      task: task,
+      priority: priority,
+      status: !status,
+    }
+    tasks.splice((id-1), 1, job);
+    setTasks(tasks);
+  }
+
+  const handlePriority = (event) => {
+    const job = {
+      id: id,
+      date: date,
+      task: task,
+      priority: event.target.outerText,
+      status: status,
+    }
+    tasks.splice((id-1), 1, job);
+    setTasks(tasks);
+  }
+
+  console.log()
+  console.log("task id", id)
+  console.log(tasks)
 
     return (
       <TaskContainer className="Tasks">
@@ -14,13 +43,13 @@ const Task = (props) => {
                 <input
                   type="checkbox"
                   value={status}
-                  // onChange={handleProgress}
+                  onClick={handleStatus}
                 />
                 :
                 <input
                   type="checkbox"
                   value={task.status}
-                  // onChange={handleProgress}
+                  onClick={handleStatus}
                   defaultChecked
                 />}
             </div>
@@ -37,26 +66,26 @@ const Task = (props) => {
           {priority==='Low' ?
             <Priority className="priority">
               <Low>Low</Low>
-              <NotSelected>Medium</NotSelected>
-              <NotSelected>High</NotSelected>
+              <NotSelected onClick={handlePriority}>Medium</NotSelected>
+              <NotSelected onClick={handlePriority}>High</NotSelected>
             </Priority>
             : (priority==='Medium' ?
             <Priority className="priority">
-              <NotSelected>Low</NotSelected>
+              <NotSelected onClick={handlePriority}>Low</NotSelected>
               <Medium>Medium</Medium>
-              <NotSelected>High</NotSelected>
+              <NotSelected onClick={handlePriority}>High</NotSelected>
             </Priority>
             : (priority==='High'?
             <Priority className="priority">
-              <NotSelected>Low</NotSelected>
-              <NotSelected>Medium</NotSelected>
+              <NotSelected onClick={handlePriority}>Low</NotSelected>
+              <NotSelected onClick={handlePriority}>Medium</NotSelected>
               <High>High</High>
             </Priority>
             :
             <Priority className="priority">
-              <NotSelected>Low</NotSelected>
-              <NotSelected>Medium</NotSelected>
-              <NotSelected>High</NotSelected>
+              <NotSelected onClick={handlePriority}>Low</NotSelected>
+              <NotSelected onClick={handlePriority}>Medium</NotSelected>
+              <NotSelected onClick={handlePriority}>High</NotSelected>
             </Priority>
              ))}
         </div>

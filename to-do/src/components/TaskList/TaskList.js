@@ -18,19 +18,18 @@ const TaskList = (props) => {
     setIsOpen(false);
   }
 
-  console.log(view)
-
     return (
       <ListContainer className="listContainer">
         <div className="list">
           {tasks.map(task => {
             if(task.status !== view) return null;
             return <Task
+                      id={task.id}
                       date={task.date}
                       priority={task.priority}
                       status={task.status}
                       task={task.task}
-                      key={task.task}
+                      key={task.id}
                       tasks={tasks}
                       setTasks={setTasks}
                        />

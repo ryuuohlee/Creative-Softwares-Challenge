@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { Form, TaskData } from './TaskModalStyle.js';
-import calendar from '../../calendar-with-spring-binder-and-date-blocks.png';
 
 const TaskModal = (props) => {
   console.log(props)
@@ -29,6 +28,7 @@ const TaskModal = (props) => {
     event.preventDefault();
     event.stopPropagation();
     setTasks([...tasks, {
+      id: tasks.length+1,
       task: taskTitle,
       date: date,
       priority: priority,
@@ -36,8 +36,6 @@ const TaskModal = (props) => {
     }])
     closeModal();
   }
-
-  console.log(date)
 
     return (
       <div className="Tasks">
