@@ -18,6 +18,7 @@ export const Stats = styled.div`
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;
+  margin-bottom: 10px;
 `;
 
 export const Priority = styled.div`
@@ -77,4 +78,27 @@ export const NotSelected = styled.button`
   margin-left: 3px;
   margin-right: 3px;
   margin-bottom: 12px;
+`;
+
+export const DueDate = styled.div`
+  position: absolute;
+  right: -1rem;
+  width: 30%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  @media (max-width: 411px) {
+    position: absolute;
+    right: 1.5rem;
+  }
+`;
+
+export const Calendar = styled.img`
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-bottom: -2px;
+  height: 20%;
+  width: 10%;
+  @media (max-width: 411px) {
+    visibility: hidden;
+  }
 `;

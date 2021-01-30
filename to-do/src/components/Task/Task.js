@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, NotSelected } from './TaskStyle.js';
+import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, NotSelected, Calendar, DueDate } from './TaskStyle.js';
+import calendar from '../../calendar-with-spring-binder-and-date-blocks.png';
 
 const Task = (props) => {
   const { date, priority, status, task, tasks, setTasks } = props;
@@ -27,9 +28,10 @@ const Task = (props) => {
               {task}
             </Label>
           </ProgressName>
-          <div className="classLabel">
+          <DueDate className="classLabel">
             {date}
-          </div>
+            <Calendar className="calendar" src={calendar} alt="calendar"/>
+          </DueDate>
         </Stats>
         <div>
           {priority==='Low' ?

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { Form, TaskData } from './TaskModalStyle.js';
+import calendar from '../../calendar-with-spring-binder-and-date-blocks.png';
 
 const TaskModal = (props) => {
   console.log(props)
