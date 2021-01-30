@@ -32,7 +32,7 @@ const CurrentDate = (props) => {
            : (date[1] === 'Nov' ? 'November'
            : (date[1] === 'Dec' ? 'December'
            : date[1]
-           )))))))))))}, {date[2]}
+           )))))))))))} {date[2]}
         </Date>
         <Year className="year">
           {date[3]}

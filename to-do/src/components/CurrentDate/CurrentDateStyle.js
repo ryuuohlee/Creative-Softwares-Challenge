@@ -25,7 +25,7 @@ export const DateContainer = styled.div`
 
 `;
 
-export const Day = styled.h3`
+export const Day = styled.h2`
   margin: 2px;
   color: rgb(100,100,100);
   @media (max-width: 411px) {

@@ -6,7 +6,7 @@ export const ListContainer = styled.div`
   border-radius: 5%;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
   height: auto;
-  min-height: 600px;
+  min-height: 800px;
   width: auto;
   min-width: 275px;
   padding: 1.25rem;
@@ -15,6 +15,9 @@ export const ListContainer = styled.div`
     height: 150px;
     min-height: 550px;
   }
+`;
+
+export const List = styled.div`;
 `;
 
 export const AddTask = styled.div`

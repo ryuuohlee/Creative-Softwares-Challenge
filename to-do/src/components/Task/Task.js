@@ -1,50 +1,70 @@
-import React from 'react';
-import { TaskContainer, Low, Medium, High } from './TaskStyle.js';
+import React, { useState } from 'react';
+import { TaskContainer, Low, Medium, High, Stats, Priority, ProgressName, Label, PriorityStates, NotSelected } from './TaskStyle.js';
 
 const Task = (props) => {
-  const { date, priority, status, task } = props;
+  const { date, priority, status, task, tasks, setTasks } = props;
+  //const [progress, setProgress] = useState(status)
+  const [job, setJob] = useState({
+    date: date,
+    priority: priority,
+    status: status,
+    task: task
+  })
+
     return (
       <TaskContainer className="Tasks">
-        <div className="stats">
-          <div className="classState">
-            <input
-              type="checkbox"
-            />
-          </div>
-          <div className="classLabel">
-            {task}
-          </div>
+        <Stats className="stats">
+          <ProgressName className="progressName">
+            <div className="classState">
+              { status === false ?
+                <input
+                  type="checkbox"
+                  value={status}
+                  // onChange={handleProgress}
+                />
+                :
+                <input
+                  type="checkbox"
+                  value={task.status}
+                  // onChange={handleProgress}
+                  defaultChecked
+                />}
+            </div>
+            <Label className="classLabel">
+              {task}
+            </Label>
+          </ProgressName>
           <div className="classLabel">
             {date}
           </div>
-        </div>
-        <div>
+        </Stats>
+        <PriorityStates>
           {priority==='Low' ?
-            <div>
+            <Priority className="priority">
               <Low>Low</Low>
-              <p>Medium</p>
-              <p>High</p>
-            </div>
+              <NotSelected>Medium</NotSelected>
+              <NotSelected>High</NotSelected>
+            </Priority>
             : (priority==='Medium' ?
-            <div>
-              <p>Low</p>
+            <Priority className="priority">
+              <NotSelected>Low</NotSelected>
               <Medium>Medium</Medium>
-              <p>High</p>
-            </div>
+              <NotSelected>High</NotSelected>
+            </Priority>
             : (priority==='High'?
-            <div>
-              <p>Low</p>
-              <p>Medium</p>
+            <Priority className="priority">
+              <NotSelected>Low</NotSelected>
+              <NotSelected>Medium</NotSelected>
               <High>High</High>
-            </div>
+            </Priority>
             :
-            <div>
-              <p>Low</p>
-              <p>Medium</p>
-              <p>High</p>
-            </div>
+            <Priority className="priority">
+              <NotSelected>Low</NotSelected>
+              <NotSelected>Medium</NotSelected>
+              <NotSelected>High</NotSelected>
+            </Priority>
              ))}
-        </div>
+        </PriorityStates>
       </TaskContainer>
     );
 }

@@ -8,7 +8,7 @@ import { AppStyle, ControlContainer, FilterContainer, Filter } from './AppStyles
 const App = () => {
   const date = new Date();
   const dateParse = date.toString().split(' ');
-  const [taskList, setTasks] = useState([{task:'task 1', priority:'Low', date:'Nov 7th, 2020', status: false}, {task:'task 2', priority:'Medium', date:'Nov 8th, 2020', status: false}, {task:'task 3', priority:'High', date:'Nov 9th, 2020', status: true}])
+  const [taskList, setTasks] = useState([{task:'task 1', priority:'Low', date:'Nov 7, 2020', status: false}, {task:'task 2', priority:'Medium', date:'Nov 8, 2020', status: false}, {task:'task 3', priority:'High', date:'Nov 9, 2020', status: true}])
   const openTasks = taskList.filter(task => !task.status).length;
   const [listView, setListView] = useState(false);
 
