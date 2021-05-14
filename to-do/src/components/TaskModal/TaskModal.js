@@ -47,6 +47,7 @@ const TaskModal = (props) => {
               onSelect={handleDueDate}
               onChange={date => setStartDate(date)}
               isClearable
+              required
             />
 
           </TaskData>
@@ -56,6 +57,7 @@ const TaskModal = (props) => {
               type='text'
               id='taskName'
               onChange={handleTaskTitle}
+              required
             />
           </TaskData>
           <TaskData className='taskPriority'>

@@ -25,26 +25,26 @@ const App = () => {
     }
   }
 
-    return (
-      <AppStyle className="App">
-        <div>
-          <CurrentDate date={dateParse} />
-          <OpenTasks open={openTasks} />
-        </div>
-        <FilterContainer className="filterControl">
-          {listView === false ?<ControlContainer>
+  return (
+    <AppStyle className="App">
+      <div>
+        <CurrentDate date={dateParse} />
+        <OpenTasks open={openTasks} />
+      </div>
+      <FilterContainer classNamve="filterControl">
+        {
+          listView === false ?<ControlContainer>
               <Filter onClick={handleListView} value="Pending">Pending</Filter><Unfilter onClick={handleListView} value="Pending">Completed</Unfilter>
             </ControlContainer>
             :
             <ControlContainer>
               <Unfilter onClick={handleListView} value="Pending">Pending</Unfilter><Filter onClick={handleListView} value="Pending">Completed</Filter>
             </ControlContainer>
-            }
-
-          <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
-        </FilterContainer>
-      </AppStyle>
-    );
+          }
+        <TaskList tasks={taskList} view={listView} setTasks={setTasks} />
+      </FilterContainer>
+    </AppStyle>
+  );
 }
 
 export default App;
